@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.auroraos.webSocket
+Exec=/usr/bin/ru.auroraos.webSocket
+Name=Template
+Name[ru]=Шаблон
+
+[X-Application]
+Permissions=Sensors;SecureStorage;PushNotifications;DeviceInfo;Audio;Bluetooth;Camera;Internet;Location;MediaIndexing;Microphone;NFC;RemovableMedia;UserDirs;WebView
+OrganizationName=ru.auroraos
+ApplicationName=webSocket
+ExecDBus=/usr/bin/ru.auroraos.webSocket
