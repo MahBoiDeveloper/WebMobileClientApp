@@ -10,10 +10,10 @@ PKGCONFIG += \
 
 SOURCES += \
     src/main.cpp \
-    src/mywebsocketclient.cpp
+    src/WebSocketClient.cpp
 
 HEADERS += \
-    src/mywebsocketclient.h
+    src/WebSocketClient.hpp
 
 DISTFILES += \
     rpm/ru.auroraos.webSocket.spec \
