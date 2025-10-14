@@ -1,5 +1,5 @@
 #include <QDebug>
-#include "mywebsocketclient.h"
+#include "WebSocketClient.hpp"
 
 WebSocketClient::WebSocketClient(QObject *parent) : QObject(parent)
 {
