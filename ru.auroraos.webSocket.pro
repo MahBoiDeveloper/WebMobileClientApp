@@ -2,17 +2,12 @@ TARGET = ru.auroraos.webSocket
 
 CONFIG += auroraapp
 
-QT += core gui qml quick network dbus svg #websockets
+QT += core gui qml quick network dbus svg websockets
 
 PKGCONFIG += \
 
-
-
-
-LIBS += -Llibs -lqt5websockets
-
-INCLUDEPATH += libs/qtwebsockets/include/QtWebSockets
-INCLUDEPATH += libs/qtwebsockets/include
+#INCLUDEPATH += libs/qtwebsockets/include/QtWebSockets
+#INCLUDEPATH += libs/qtwebsockets/include
 
 
 SOURCES += \

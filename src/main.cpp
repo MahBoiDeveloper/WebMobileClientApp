@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     view->show();
 
     MyWebSocketClient client;
-    client.connectToServer(QUrl(QStringLiteral("ws://192.168.31.190:8090")));
+    client.connectToServer(QUrl(QStringLiteral("ws://expserver.site:40000")));
 
     return application->exec();
 }
