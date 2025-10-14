@@ -1,25 +1,18 @@
-#ifndef MYWEBSOCKETCLIENT_H
-#define MYWEBSOCKETCLIENT_H
-
-
 #pragma once
 
 #include <QWebSocket>
 #include <QObject>
 
-class MyWebSocketClient : public QObject {
+class WebSocketClient : public QObject
+{
+private:
+    QWebSocket ws;
     Q_OBJECT
 public:
-    explicit MyWebSocketClient(QObject *parent = nullptr);
+    explicit WebSocketClient(QObject *parent = nullptr);
 
 public slots:
-    void onConnected();
-    void onTextMessageReceived(const QString &message);
-
-    void connectToServer(const QUrl &url);
-
-private:
-    QWebSocket m_webSocket;
+    void OnOpen();
+    void OnText(const QString &message);
+    void Connect(const QUrl &url);
 };
-
-#endif // MYWEBSOCKETCLIENT_H

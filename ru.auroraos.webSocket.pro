@@ -1,14 +1,12 @@
 TARGET = ru.auroraos.webSocket
 
-CONFIG += auroraapp
+CONFIG += \
+    c++17 \
+    auroraapp \
 
 QT += core gui qml quick network dbus svg websockets
 
 PKGCONFIG += \
-
-#INCLUDEPATH += libs/qtwebsockets/include/QtWebSockets
-#INCLUDEPATH += libs/qtwebsockets/include
-
 
 SOURCES += \
     src/main.cpp \
@@ -19,15 +17,15 @@ HEADERS += \
 
 DISTFILES += \
     rpm/ru.auroraos.webSocket.spec \
+    qml/webSocket.qml \
+    qml/cover/DefaultCoverPage.qml \
+    qml/pages/AboutPage.qml \
+    qml/pages/MainPage.qml \
     AUTHORS.md \
     CODE_OF_CONDUCT.md \
     CONTRIBUTING.md \
     LICENSE.BSD-3-CLAUSE.md \
     README.md \
-    qml/webSocket.qml \
-    qml/cover/DefaultCoverPage.qml \
-    qml/pages/AboutPage.qml \
-    qml/pages/MainPage.qml \
 
 AURORAAPP_ICONS = 86x86 108x108 128x128 172x172
 
