@@ -12,7 +12,7 @@ ApplicationWindow
     {
         x: 60
         y: 150
-        text: "Connected to the ws://expserver.site:40000"
+        text: qsTr("Connected to the ws://expserver.site:40000")
     }
     Row
     {
@@ -25,27 +25,50 @@ ApplicationWindow
             spacing: 10
             Rectangle
             {
-                opacity: 0.7
+                id: rLeftRect
+                opacity: 1
                 radius: 10
                 height: 80
-                width: 80
-                color: "#eb4d4b"    // красный
+                width: 350
+                color: '#e3ff43'    // красный
+                Text
+                {
+                    id: txtMain
+                    opacity: 1
+                    anchors.centerIn: parent
+                    font.family: "Consolas"
+                    text: "pageViews"
+                }
             }
             Rectangle
             {
-                opacity: 0.7
-                radius: 10
-                height: 80
-                width: 80
-                color: "#16a085"    // зеленый
+                opacity: rLeftRect.opacity
+                radius: rLeftRect.radius
+                color: rLeftRect.color
+                height: rLeftRect.height
+                width: rLeftRect.width
+                Text
+                {
+                    opacity: txtMain.opacity
+                    anchors.centerIn: parent
+                    font.family: txtMain.font.family
+                    text: "uniqueVisitors"
+                }
             }
             Rectangle
             {
-                opacity: 0.7
-                radius: 10
-                height: 80
-                width: 80
-                color: "#0984e3"    // синий
+                opacity: rLeftRect.opacity
+                radius: rLeftRect.radius
+                color: rLeftRect.color
+                height: rLeftRect.height
+                width: rLeftRect.width
+                Text
+                {
+                    opacity: txtMain.opacity
+                    anchors.centerIn: parent
+                    font.family: txtMain.font.family
+                    text: "avgSessionDuration"
+                }
             }
         }
 
@@ -54,27 +77,52 @@ ApplicationWindow
             spacing: 10
             Rectangle
             {
-                opacity: 0.7
-                radius: 10
+                id: rRightRect
+                opacity: rLeftRect.opacity
+                radius: rLeftRect.radius
+                color: rLeftRect.color
                 height: 80
                 width: 80
-                color: '#1c5e59'    // красный
+                Text
+                {
+                    id: txtPageViewsValue
+                    opacity: txtMain.opacity
+                    anchors.centerIn: parent
+                    font.family: txtMain.font.family
+                    text: "asd"
+                }
             }
             Rectangle
             {
-                opacity: 0.7
-                radius: 10
-                height: 80
-                width: 80
-                color: '#88783e'    // зеленый
+                opacity: rRightRect.opacity
+                radius: rRightRect.radius
+                color: rRightRect.color
+                height: rRightRect.height
+                width: rRightRect.width
+                Text
+                {
+                    id: txtUniqueVisitorsValue
+                    opacity: txtMain.opacity
+                    anchors.centerIn: parent
+                    font.family: txtMain.font.family
+                    text: "asd"
+                }
             }
             Rectangle
             {
-                opacity: 0.7
-                radius: 10
-                height: 80
-                width: 80
-                color: '#aa3897'    // синий
+                opacity: rRightRect.opacity
+                radius: rRightRect.radius
+                color: rRightRect.color
+                height: rRightRect.height
+                width: rRightRect.width
+                Text
+                {
+                    id: avgSessionDuration
+                    opacity: txtMain.opacity
+                    anchors.centerIn: parent
+                    font.family: txtMain.font.family
+                    text: "asd"
+                }
             }
         }
     }
