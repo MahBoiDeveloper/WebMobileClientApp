@@ -34,9 +34,9 @@
 <context>
     <name>DefaultCoverPage</name>
     <message>
-        <location filename="../qml/cover/DefaultCoverPage.qml" line="46"/>
-        <source>Template</source>
-        <translation>Template</translation>
+        <location filename="../qml/cover/DefaultCoverPage.qml" line="9"/>
+        <source>Web Socket Client</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
