@@ -47,12 +47,4 @@
         <translation>Template</translation>
     </message>
 </context>
-<context>
-    <name>webSocket</name>
-    <message>
-        <location filename="../qml/webSocket.qml" line="15"/>
-        <source>Connected to the ws://expserver.site:40000</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
 </TS>

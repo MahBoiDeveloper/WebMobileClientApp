@@ -1,5 +1,10 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import WebSocketClient 1.0
+
+// If you get M306 -- add Q_INVOKABLE
+// https://stackoverflow.com/questions/31630078/c-class-exposed-to-qml-error-in-fashion-typeerror-property-of-object-is
+
 
 ApplicationWindow
 {
@@ -8,16 +13,25 @@ ApplicationWindow
     cover: Qt.resolvedUrl("cover/DefaultCoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
 
+    // https://metanit.com/cpp/qt/5.2.php
+    WebSocketClient
+    {
+        id: wsc
+    }
+
     Label
     {
+        id: lblHeader
         x: 60
         y: 150
-        text: qsTr("Connected to the ws://expserver.site:40000")
+        text: "Disconnected"
     }
+
     Row
     {
-        x: 100
-        y: 200
+        id: rwBody
+        x: lblHeader.x
+        y: lblHeader.y + 150
         spacing: 10
 
         Column
@@ -35,7 +49,8 @@ ApplicationWindow
                 {
                     id: txtMain
                     opacity: 1
-                    anchors.centerIn: parent
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
                     font.family: "Consolas"
                     text: "pageViews"
                 }
@@ -50,7 +65,7 @@ ApplicationWindow
                 Text
                 {
                     opacity: txtMain.opacity
-                    anchors.centerIn: parent
+                    horizontalAlignment: txtMain.horizontalAlignment
                     font.family: txtMain.font.family
                     text: "uniqueVisitors"
                 }
@@ -65,7 +80,7 @@ ApplicationWindow
                 Text
                 {
                     opacity: txtMain.opacity
-                    anchors.centerIn: parent
+                    horizontalAlignment: txtMain.horizontalAlignment
                     font.family: txtMain.font.family
                     text: "avgSessionDuration"
                 }
@@ -117,7 +132,7 @@ ApplicationWindow
                 width: rRightRect.width
                 Text
                 {
-                    id: avgSessionDuration
+                    id: txtAvgSessionDurationValue
                     opacity: txtMain.opacity
                     anchors.centerIn: parent
                     font.family: txtMain.font.family
@@ -126,4 +141,55 @@ ApplicationWindow
             }
         }
     }
+
+    Row
+    {
+        x: rwBody.x
+        y: rwBody.y + 350
+        spacing: rwBody.spacing
+        Column
+        {
+            Button
+            {
+                id: btnConnect
+                width: 200
+                height: 30
+                color: '#ffffff';
+                text: "Connect"
+                backgroundColor: '#441c7f'
+
+                onClicked: {
+                    wsc.Connect("ws://expserver.site:40000")
+                    lblHeader.text = "Connected to ws://expserver.site:40000" 
+                    color = wsc.Connected ? '#000000' : '#ffffff'
+                    backgroundColor = wsc.Connected ? '#ab23ab' : '#441c7f'
+                }
+
+
+            }
+        }
+
+        Column
+        {
+            Button
+            {
+                id: btnGet
+                width: 200
+                height: 30
+                color: '#ffffff';
+                text: "Get Data"
+
+                onClicked: {
+                    wsc.SendRequest()
+                    // txtPageViewsValue.text = wsc.PageViews
+                    // txtUniqueVisitorsValue.text = wsc.UniqueVisitors
+                    // txtAvgSessionDurationValue.text = wsc.AvgSessionDuration
+                    txtPageViewsValue.textChanged(wsc.PageViews)
+                    txtUniqueVisitorsValue.textChanged(wsc.UniqueVisitors)
+                    txtAvgSessionDurationValue.textChanged(wsc.AvgSessionDuration)
+                }
+                backgroundColor: '#441c7f'
+            }
+        }
+    }    
 }
