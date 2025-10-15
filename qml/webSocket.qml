@@ -40,19 +40,19 @@ ApplicationWindow
             Rectangle
             {
                 id: rLeftRect
-                opacity: 1
                 radius: 10
                 height: 80
-                width: 350
-                color: '#e3ff43'    // красный
+                width: 450
+                color: '#e3ff43'
                 Text
                 {
                     id: txtMain
-                    opacity: 1
+                    anchors.fill: parent
+                    anchors.leftMargin: 10
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignVCenter
                     font.family: "Consolas"
-                    text: "pageViews"
+                    text: "Page Views:"
                 }
             }
             Rectangle
@@ -64,10 +64,12 @@ ApplicationWindow
                 width: rLeftRect.width
                 Text
                 {
-                    opacity: txtMain.opacity
-                    horizontalAlignment: txtMain.horizontalAlignment
+                    anchors.fill: parent
+                    anchors.leftMargin: 10
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
                     font.family: txtMain.font.family
-                    text: "uniqueVisitors"
+                    text: "Unique Visitors:"
                 }
             }
             Rectangle
@@ -79,10 +81,12 @@ ApplicationWindow
                 width: rLeftRect.width
                 Text
                 {
-                    opacity: txtMain.opacity
-                    horizontalAlignment: txtMain.horizontalAlignment
+                    anchors.fill: parent
+                    anchors.leftMargin: 10
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
                     font.family: txtMain.font.family
-                    text: "avgSessionDuration"
+                    text: "Avg. Session Duration:"
                 }
             }
         }
@@ -97,14 +101,14 @@ ApplicationWindow
                 radius: rLeftRect.radius
                 color: rLeftRect.color
                 height: 80
-                width: 80
+                width: 100
                 Text
                 {
                     id: txtPageViewsValue
                     opacity: txtMain.opacity
                     anchors.centerIn: parent
                     font.family: txtMain.font.family
-                    text: "asd"
+                    text: "N/A"
                 }
             }
             Rectangle
@@ -120,7 +124,7 @@ ApplicationWindow
                     opacity: txtMain.opacity
                     anchors.centerIn: parent
                     font.family: txtMain.font.family
-                    text: "asd"
+                    text: "N/A"
                 }
             }
             Rectangle
@@ -136,7 +140,7 @@ ApplicationWindow
                     opacity: txtMain.opacity
                     anchors.centerIn: parent
                     font.family: txtMain.font.family
-                    text: "asd"
+                    text: "N/A"
                     onTextChanged: {
                         text = wsc.AvgSessionDurationValue
                     }
@@ -163,8 +167,14 @@ ApplicationWindow
 
                 onClicked: {
                     wsc.Connect("ws://expserver.site:40000")
+                    wsc.SendRequest()
                     lblHeader.text = "Connected to ws://expserver.site:40000" 
-                    text = "Connect"
+
+                    txtPageViewsValue.text = wsc.PageViews()
+                    txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
+                    txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
+
+                    text = "Connected"
                     color = '#000000'
                     backgroundColor = '#ab23ab'
                 }
