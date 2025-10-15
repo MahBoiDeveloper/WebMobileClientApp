@@ -137,6 +137,9 @@ ApplicationWindow
                     anchors.centerIn: parent
                     font.family: txtMain.font.family
                     text: "asd"
+                    onTextChanged: {
+                        text = wsc.AvgSessionDurationValue
+                    }
                 }
             }
         }
@@ -161,11 +164,10 @@ ApplicationWindow
                 onClicked: {
                     wsc.Connect("ws://expserver.site:40000")
                     lblHeader.text = "Connected to ws://expserver.site:40000" 
-                    color = wsc.Connected ? '#000000' : '#ffffff'
-                    backgroundColor = wsc.Connected ? '#ab23ab' : '#441c7f'
+                    text = "Connect"
+                    color = '#000000'
+                    backgroundColor = '#ab23ab'
                 }
-
-
             }
         }
 
@@ -181,12 +183,9 @@ ApplicationWindow
 
                 onClicked: {
                     wsc.SendRequest()
-                    // txtPageViewsValue.text = wsc.PageViews
-                    // txtUniqueVisitorsValue.text = wsc.UniqueVisitors
-                    // txtAvgSessionDurationValue.text = wsc.AvgSessionDuration
-                    txtPageViewsValue.textChanged(wsc.PageViews)
-                    txtUniqueVisitorsValue.textChanged(wsc.UniqueVisitors)
-                    txtAvgSessionDurationValue.textChanged(wsc.AvgSessionDuration)
+                    txtPageViewsValue.text = wsc.PageViews()
+                    txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
+                    txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
                 }
                 backgroundColor: '#441c7f'
             }

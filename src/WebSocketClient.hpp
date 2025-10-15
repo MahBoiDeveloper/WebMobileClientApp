@@ -12,17 +12,16 @@ private:
     int32_t pageViews = 0;
     int32_t uniqueVisitors = 0;
     int32_t avgSessionDuration = 0;
-
-public:
-    Q_INVOKABLE QString PageViews = "";
-    Q_INVOKABLE QString UniqueVisitors = "";
-    Q_INVOKABLE QString AvgSessionDuration = "";
-    Q_INVOKABLE bool    Connected = false;
+    bool    connected = false;
 
 public:
     explicit WebSocketClient(QObject *parent = nullptr);
     /// @brief Sends get request on the web socket server.
-    Q_INVOKABLE void SendRequest();
+    Q_INVOKABLE void    SendRequest();
+    Q_INVOKABLE bool    IsConnected();
+    Q_INVOKABLE QString PageViews();
+    Q_INVOKABLE QString UniqueVisitors();
+    Q_INVOKABLE QString AvgSessionDuration();
 
 public slots:
     /// @brief Connects to the specific server.

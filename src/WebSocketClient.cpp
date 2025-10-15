@@ -1,5 +1,4 @@
 #include <QFile>
-#include <QDebug>
 #include <QJsonObject>
 #include <QJsonDocument>
 #include "WebSocketClient.hpp"
@@ -14,11 +13,9 @@ void WebSocketClient::Connect(const QUrl& url)
 {
     qDebug() << "Подключение к серверу WebSocket:" << url.toString() << "...";
     ws.open(url);
-    Connected = true;
+    connected = true;
     qDebug() << "Соединение установлено";
 }
-
-void WebSocketClient::OnOpen() { ws.sendTextMessage("Hello chat!"); }
 
 void WebSocketClient::OnText(const QString& message)
 {
@@ -30,15 +27,20 @@ void WebSocketClient::OnText(const QString& message)
         auto doc = QJsonDocument::fromJson(message.toUtf8(), &err);
         QJsonObject obj = doc.object();
 
-        PageViews = QString::number(pageViews = obj["pageViews"].toInt());
-        UniqueVisitors = QString::number(uniqueVisitors = obj["uniqueVisitors"].toInt());
-        AvgSessionDuration = QString::number(avgSessionDuration = obj["avgSessionDuration"].toInt());
+        this->pageViews = obj["pageViews"].toInt();
+        this->uniqueVisitors = obj["uniqueVisitors"].toInt();
+        this->avgSessionDuration = obj["avgSessionDuration"].toInt();
 
-        qDebug() << "PageViews = " << PageViews;
-        qDebug() << "UniqueVisitors = " << UniqueVisitors;
-        qDebug() << "AvgSessionDuration = " << AvgSessionDuration;
+        qDebug() << "PageViews = " << PageViews();
+        qDebug() << "UniqueVisitors = " << UniqueVisitors();
+        qDebug() << "AvgSessionDuration = " << AvgSessionDuration();
     }
-
 }
 
+void WebSocketClient::OnOpen()      { ws.sendTextMessage("Hello chat!"); }
 void WebSocketClient::SendRequest() { ws.sendTextMessage("get"); }
+
+bool WebSocketClient::IsConnected()           { return connected; }
+QString WebSocketClient::PageViews()          { return QString::number(pageViews); }
+QString WebSocketClient::UniqueVisitors()     { return QString::number(uniqueVisitors); }
+QString WebSocketClient::AvgSessionDuration() { return QString::number(avgSessionDuration); }
