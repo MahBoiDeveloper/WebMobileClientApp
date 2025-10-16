@@ -9,7 +9,7 @@ class WebSocketClient : public QObject
 private:
     Q_OBJECT
     QWebSocket ws;
-    QString status;
+    QString status = "Disconnected";
     int32_t pageViews = 0;
     int32_t uniqueVisitors = 0;
     int32_t avgSessionDuration = 0;

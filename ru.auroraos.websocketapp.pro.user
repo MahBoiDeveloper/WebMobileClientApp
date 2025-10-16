@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.15.2, 2025-10-16T14:13:29. -->
+<!-- Written by QtCreator 4.15.2, 2025-10-16T15:12:56. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -413,9 +413,9 @@
     <value type="bool" key="MerRunConfiguration.SandboxEnabled">false</value>
     <value type="int" key="PE.EnvironmentAspect.Base">1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ru.auroraos.webSocket (on %{Device:Name})</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QmakeProjectManager.MerRunConfiguration:/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.webSocket.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.webSocket.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ru.auroraos.websocketapp (on %{Device:Name})</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QmakeProjectManager.MerRunConfiguration:/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.websocketapp.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.websocketapp.pro</value>
     <value type="int" key="RemoteLinux.EnvironmentAspect.Version">1</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>

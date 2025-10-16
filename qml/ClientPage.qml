@@ -23,7 +23,7 @@ ApplicationWindow
         id: lblHeader
         x: 60
         y: 150
-        text: "Disconnected"
+        text: wsc.GetStatus()
     }
 
     Row
@@ -167,7 +167,7 @@ ApplicationWindow
                 onClicked: {
                     wsc.Connect("ws://expserver.site:40000")
                     wsc.SendRequest()
-                    lblHeader.text = "Connected to ws://expserver.site:40000" 
+                    lblHeader.text = wsc.GetStatus()
 
                     txtPageViewsValue.text = wsc.PageViews()
                     txtUniqueVisitorsValue.text = wsc.UniqueVisitors()

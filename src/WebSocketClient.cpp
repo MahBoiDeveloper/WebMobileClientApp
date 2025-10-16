@@ -42,8 +42,8 @@ void WebSocketClient::OnText(const QString& message)
 
 void WebSocketClient::OnClose()
 {
-    qDebug() << "Error occured while connecting to the server or being connected with it";
-    status = "Disconnected";
+    qDebug() << "Соединение закрыто";
+    status = ws.errorString();
 }
 
 void WebSocketClient::OnOpen()      { ws.sendTextMessage("Hello chat!"); }
