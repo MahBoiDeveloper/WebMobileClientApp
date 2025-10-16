@@ -8,7 +8,7 @@ CoverBackground {
         objectName: "placeholder"
         text: qsTr("Web Socket Client")
         icon {
-            source: Qt.resolvedUrl("../icons/webSocket.svg")
+            source: Qt.resolvedUrl("../icons/websocketapp.svg")
             sourceSize { width: icon.width; height: icon.height }
         }
         forceFit: true

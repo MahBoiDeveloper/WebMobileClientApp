@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.15.2, 2025-10-16T14:09:45. -->
+<!-- Written by QtCreator 4.15.2, 2025-10-16T14:13:29. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -105,8 +105,8 @@
     <value type="QString" key="MerBuildConfiguration.SigningUser"></value>
     <value type="QString" key="MerSfdkConfigurationAspect.Options"></value>
     <value type="QString" key="MerSpecFileAspect.Path"></value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -166,8 +166,8 @@
     <value type="QString" key="MerBuildConfiguration.SigningUser"></value>
     <value type="QString" key="MerSfdkConfigurationAspect.Options"></value>
     <value type="QString" key="MerSpecFileAspect.Path"></value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -228,8 +228,8 @@
     <value type="QString" key="MerBuildConfiguration.SigningUser"></value>
     <value type="QString" key="MerSfdkConfigurationAspect.Options"></value>
     <value type="QString" key="MerSpecFileAspect.Path"></value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_x86_64_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -413,7 +413,7 @@
     <value type="bool" key="MerRunConfiguration.SandboxEnabled">false</value>
     <value type="int" key="PE.EnvironmentAspect.Base">1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ru.auroraos.webSocket (on %{Device:Name})2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ru.auroraos.webSocket (on %{Device:Name})</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QmakeProjectManager.MerRunConfiguration:/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.webSocket.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.webSocket.pro</value>
     <value type="int" key="RemoteLinux.EnvironmentAspect.Version">1</value>
@@ -443,8 +443,8 @@
     <value type="QString" key="MerBuildConfiguration.SigningUser"></value>
     <value type="QString" key="MerSfdkConfigurationAspect.Options"></value>
     <value type="QString" key="MerSpecFileAspect.Path"></value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -504,8 +504,8 @@
     <value type="QString" key="MerBuildConfiguration.SigningUser"></value>
     <value type="QString" key="MerSfdkConfigurationAspect.Options"></value>
     <value type="QString" key="MerSpecFileAspect.Path"></value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -566,8 +566,8 @@
     <value type="QString" key="MerBuildConfiguration.SigningUser"></value>
     <value type="QString" key="MerSfdkConfigurationAspect.Options"></value>
     <value type="QString" key="MerSpecFileAspect.Path"></value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_armv7hl_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -751,9 +751,9 @@
     <value type="bool" key="MerRunConfiguration.SandboxEnabled">false</value>
     <value type="int" key="PE.EnvironmentAspect.Base">1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ru.auroraos.webSocket</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QmakeProjectManager.MerRunConfiguration:/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.webSocket.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.webSocket.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ru.auroraos.websocketapp</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QmakeProjectManager.MerRunConfiguration:/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.websocketapp.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.websocketapp.pro</value>
     <value type="int" key="RemoteLinux.EnvironmentAspect.Version">1</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
@@ -781,8 +781,8 @@
     <value type="QString" key="MerBuildConfiguration.SigningUser"></value>
     <value type="QString" key="MerSfdkConfigurationAspect.Options"></value>
     <value type="QString" key="MerSpecFileAspect.Path"></value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -842,8 +842,8 @@
     <value type="QString" key="MerBuildConfiguration.SigningUser"></value>
     <value type="QString" key="MerSfdkConfigurationAspect.Options"></value>
     <value type="QString" key="MerSpecFileAspect.Path"></value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -904,8 +904,8 @@
     <value type="QString" key="MerBuildConfiguration.SigningUser"></value>
     <value type="QString" key="MerSfdkConfigurationAspect.Options"></value>
     <value type="QString" key="MerSpecFileAspect.Path"></value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.webSocket-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/pc/_GitHub/build-ru.auroraos.websocketapp-AuroraOS_5_1_5_105_MB2_aarch64_in_Aurora_Build_Engine_5_1_5_105_mb2-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -1089,9 +1089,9 @@
     <value type="bool" key="MerRunConfiguration.SandboxEnabled">false</value>
     <value type="int" key="PE.EnvironmentAspect.Base">1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ru.auroraos.webSocket</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QmakeProjectManager.MerRunConfiguration:/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.webSocket.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.webSocket.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ru.auroraos.websocketapp</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QmakeProjectManager.MerRunConfiguration:/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.websocketapp.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/pc/_GitHub/WebMobileClientApp/ru.auroraos.websocketapp.pro</value>
     <value type="int" key="RemoteLinux.EnvironmentAspect.Version">1</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>

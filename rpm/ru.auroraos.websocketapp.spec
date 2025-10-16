@@ -1,4 +1,4 @@
-Name:       ru.auroraos.webSocket
+Name:       ru.auroraos.websocketapp
 
 %define __provides_exclude_from ^%{_datadir}/.*$
 %define __requires_exclude ^(libqt5websockets.a.*)$
@@ -32,7 +32,7 @@ BuildRequires:  pkgconfig(Qt5WebSockets)
 %build
 %qtc_qmake5 %{name}.pro
 %qtc_make %{?_smp_mflags}
-%qtc_qmake5 ru.auroraos.webSocket-subdirs.pro
+%qtc_qmake5 ru.auroraos.websocketapp-subdirs.pro
 %qtc_make %{?_smp_mflags}
 
 %install

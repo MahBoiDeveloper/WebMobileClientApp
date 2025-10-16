@@ -1,4 +1,4 @@
-TARGET = ru.auroraos.webSocket
+TARGET = ru.auroraos.websocketapp
 
 CONFIG += \
     c++17 \
@@ -18,7 +18,7 @@ HEADERS += \
     src/WebSocketServer.hpp
 
 DISTFILES += \
-    rpm/ru.auroraos.webSocket.spec \
+    rpm/ru.auroraos.websocketapp.spec \
     qml/webSocket.qml \
     qml/cover/DefaultCoverPage.qml \
     qml/pages/AboutPage.qml \
@@ -34,5 +34,5 @@ AURORAAPP_ICONS = 86x86 108x108 128x128 172x172
 CONFIG += auroraapp_i18n
 
 TRANSLATIONS += \
-    translations/ru.auroraos.webSocket.ts \
-    translations/ru.auroraos.webSocket-ru.ts \
+    translations/ru.auroraos.websocketapp.ts \
+    translations/ru.auroraos.websocketapp-ru.ts \
