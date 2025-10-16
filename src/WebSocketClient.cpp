@@ -1,4 +1,3 @@
-#include <QFile>
 #include <QJsonObject>
 #include <QJsonDocument>
 #include "WebSocketClient.hpp"

@@ -1,10 +1,9 @@
-import QtQuick 2.0
+import QtQuick 2.6
 import Sailfish.Silica 1.0
 import WebSocketClient 1.0
 
 // If you get M306 -- add Q_INVOKABLE
 // https://stackoverflow.com/questions/31630078/c-class-exposed-to-qml-error-in-fashion-typeerror-property-of-object-is
-
 
 ApplicationWindow
 {

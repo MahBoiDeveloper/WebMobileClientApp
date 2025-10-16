@@ -9,11 +9,13 @@ QT += core gui qml quick network dbus svg websockets
 PKGCONFIG += \
 
 SOURCES += \
+    src/WebSocketServer.cpp \
     src/main.cpp \
     src/WebSocketClient.cpp \
 
 HEADERS += \
     src/WebSocketClient.hpp \
+    src/WebSocketServer.hpp
 
 DISTFILES += \
     rpm/ru.auroraos.webSocket.spec \

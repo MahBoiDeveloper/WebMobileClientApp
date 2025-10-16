@@ -1,7 +1,7 @@
-#include <auroraapp.h>
 #include <QtQuick>
-#include <QQmlApplicationEngine>
+#include <auroraapp.h>
 #include "WebSocketClient.hpp"
+#include "WebSocketServer.hpp"
 
 int main(int argc, char *argv[])
 {
