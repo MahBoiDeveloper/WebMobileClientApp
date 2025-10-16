@@ -18,8 +18,8 @@ HEADERS += \
     src/WebSocketServer.hpp
 
 DISTFILES += \
+    qml/ClientPage.qml \
     rpm/ru.auroraos.websocketapp.spec \
-    qml/webSocket.qml \
     qml/cover/DefaultCoverPage.qml \
     qml/pages/AboutPage.qml \
     qml/pages/MainPage.qml \

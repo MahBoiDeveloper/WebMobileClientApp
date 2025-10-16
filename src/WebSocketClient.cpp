@@ -1,19 +1,23 @@
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <QAbstractSocket>
 #include "WebSocketClient.hpp"
 
 WebSocketClient::WebSocketClient(QObject* parent) : QObject(parent)
 {
     connect(&ws, &QWebSocket::connected,           this, &WebSocketClient::OnOpen);
     connect(&ws, &QWebSocket::textMessageReceived, this, &WebSocketClient::OnText);
+    connect(&ws, &QWebSocket::disconnected,        this, &WebSocketClient::OnClose);
 }
 
 void WebSocketClient::Connect(const QUrl& url)
 {
     qDebug() << "Подключение к серверу WebSocket:" << url.toString() << "...";
     ws.open(url);
-    connected = true;
+
     qDebug() << "Соединение установлено";
+    connected = true;
+    status = QString("Connected to ") + url.toString();
 }
 
 void WebSocketClient::OnText(const QString& message)
@@ -36,10 +40,17 @@ void WebSocketClient::OnText(const QString& message)
     }
 }
 
+void WebSocketClient::OnClose()
+{
+    qDebug() << "Error occured while connecting to the server or being connected with it";
+    status = "Disconnected";
+}
+
 void WebSocketClient::OnOpen()      { ws.sendTextMessage("Hello chat!"); }
 void WebSocketClient::SendRequest() { ws.sendTextMessage("get"); }
 
 bool WebSocketClient::IsConnected()           { return connected; }
+QString WebSocketClient::GetStatus()          { return status; }
 QString WebSocketClient::PageViews()          { return QString::number(pageViews); }
 QString WebSocketClient::UniqueVisitors()     { return QString::number(uniqueVisitors); }
 QString WebSocketClient::AvgSessionDuration() { return QString::number(avgSessionDuration); }

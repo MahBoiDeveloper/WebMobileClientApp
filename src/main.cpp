@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<WebSocketClient>("WebSocketClient", 1, 0, "WebSocketClient");
 
-    view->setSource(Aurora::Application::pathTo(QStringLiteral("qml/webSocket.qml")));
+    view->setSource(Aurora::Application::pathTo(QStringLiteral("qml/ClientPage.qml")));
     view->show();
 
     // WebSocketClient client;

@@ -9,6 +9,7 @@ class WebSocketClient : public QObject
 private:
     Q_OBJECT
     QWebSocket ws;
+    QString status;
     int32_t pageViews = 0;
     int32_t uniqueVisitors = 0;
     int32_t avgSessionDuration = 0;
@@ -22,6 +23,7 @@ public:
     Q_INVOKABLE QString PageViews();
     Q_INVOKABLE QString UniqueVisitors();
     Q_INVOKABLE QString AvgSessionDuration();
+    Q_INVOKABLE QString GetStatus();
 
 public slots:
     /// @brief Connects to the specific server.
@@ -30,4 +32,5 @@ public slots:
     Q_INVOKABLE void OnOpen();
     /// @brief Apply action when text message recieved.
     Q_INVOKABLE void OnText(const QString& message);
+    Q_INVOKABLE void OnClose();
 };
