@@ -4,22 +4,22 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="57"/>
+        <location filename="../qml/pages/AboutPage.qml" line="20"/>
         <source>About Application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="67"/>
+        <location filename="../qml/pages/AboutPage.qml" line="30"/>
         <source>#descriptionText</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="72"/>
+        <location filename="../qml/pages/AboutPage.qml" line="35"/>
         <source>3-Clause BSD License</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="82"/>
+        <location filename="../qml/pages/AboutPage.qml" line="45"/>
         <source>#licenseText</source>
         <translation type="unfinished"></translation>
     </message>
@@ -29,14 +29,6 @@
     <message>
         <location filename="../qml/cover/DefaultCoverPage.qml" line="9"/>
         <source>Web Socket Client</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MainPage</name>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="10"/>
-        <source>v1.0</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

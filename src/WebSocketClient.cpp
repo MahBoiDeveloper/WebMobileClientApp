@@ -29,6 +29,8 @@ void WebSocketClient::OnText(const QString& message)
 
     if (message.at(0) == '{')
     {
+        uri = message;
+
         QJsonParseError err;
         auto doc = QJsonDocument::fromJson(message.toUtf8(), &err);
         QJsonObject obj = doc.object();
@@ -54,6 +56,7 @@ void WebSocketClient::SendRequest() { ws.sendTextMessage("get"); }
 
 bool WebSocketClient::IsConnected()           { return connected; }
 QString WebSocketClient::GetStatus()          { return status; }
+QString WebSocketClient::GetURI()             { return uri; }
 QString WebSocketClient::PageViews()          { return QString::number(pageViews); }
 QString WebSocketClient::UniqueVisitors()     { return QString::number(uniqueVisitors); }
 QString WebSocketClient::AvgSessionDuration() { return QString::number(avgSessionDuration); }

@@ -148,13 +148,22 @@ ApplicationWindow
         }
     }
 
-    Row
+    Column
     {
         x: rwBody.x
-        y: rwBody.y + 350
+        y: rwBody.y + 450
         spacing: rwBody.spacing
-        Column
+
+        TextField
         {
+            id: inpURI
+            width: 500
+            text: "ws://expserver.site:40000"
+        }
+
+        Row
+        {
+            spacing: rwBody.spacing
             Button
             {
                 id: btnConnect
@@ -165,7 +174,7 @@ ApplicationWindow
                 backgroundColor: '#441c7f'
 
                 onClicked: {
-                    wsc.Connect("ws://expserver.site:40000")
+                    wsc.Connect(inpURI.text)
                     wsc.SendRequest()
                     lblHeader.text = wsc.GetStatus()
 
@@ -178,10 +187,7 @@ ApplicationWindow
                     backgroundColor = '#ab23ab'
                 }
             }
-        }
 
-        Column
-        {
             Button
             {
                 id: btnGet
@@ -199,5 +205,5 @@ ApplicationWindow
                 backgroundColor: '#441c7f'
             }
         }
-    }    
+    }
 }

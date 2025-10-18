@@ -9,6 +9,7 @@ class WebSocketClient : public QObject
 private:
     Q_OBJECT
     QWebSocket ws;
+    QString uri = "";
     QString status = "Disconnected";
     int32_t pageViews = 0;
     int32_t uniqueVisitors = 0;
@@ -24,6 +25,7 @@ public:
     Q_INVOKABLE QString UniqueVisitors();
     Q_INVOKABLE QString AvgSessionDuration();
     Q_INVOKABLE QString GetStatus();
+    Q_INVOKABLE QString GetURI();
 
 public slots:
     /// @brief Connects to the specific server.
