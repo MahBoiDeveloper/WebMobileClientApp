@@ -20,11 +20,17 @@ public:
     explicit WebSocketClient(QObject *parent = nullptr);
     /// @brief Sends get request on the web socket server.
     Q_INVOKABLE void    SendRequest();
+    /// @brief Checks if client is connected to the server.
     Q_INVOKABLE bool    IsConnected();
+    /// @brief Returns current page views string value.
     Q_INVOKABLE QString PageViews();
+    /// @brief Returns current unique visitors string value.
     Q_INVOKABLE QString UniqueVisitors();
+    /// @brief Returns current page average session duration string value.
     Q_INVOKABLE QString AvgSessionDuration();
+    /// @brief Returns client status.
     Q_INVOKABLE QString GetStatus();
+    /// @brief Returns URI that used to send data.
     Q_INVOKABLE QString GetURI();
 
 public slots:
@@ -34,5 +40,6 @@ public slots:
     Q_INVOKABLE void OnOpen();
     /// @brief Apply action when text message recieved.
     Q_INVOKABLE void OnText(const QString& message);
+    /// @brief Apply action when connection was closed.
     Q_INVOKABLE void OnClose();
 };
