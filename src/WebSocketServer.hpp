@@ -9,24 +9,27 @@ class WebSocketServer : public QObject
 {
     Q_OBJECT
 private:
-    QWebSocketServer *wss;
+    QWebSocketServer* wss;
     QList<QWebSocket*> clients;
     uint16_t port = 40000;
+    bool hosted = false;
 
 public:
     explicit WebSocketServer(QObject *parent = nullptr);
     ~WebSocketServer();
 
-    void HostServer();
-    void CloseServer();
+    Q_INVOKABLE void HostServer();
+    Q_INVOKABLE void CloseServer();
+
+    Q_INVOKABLE bool IsHosted();
 
 signals:
-    void newMessageReceived(const QString &message);
-    void clientConnected();
-    void clientDisconnected();
+    Q_INVOKABLE void newMessageReceived(const QString &message);
+    Q_INVOKABLE void clientConnected();
+    Q_INVOKABLE void clientDisconnected();
 
 private slots:
-    void OnNewConnection();
-    void OnTextMessageReceived(const QString &message);
-    void OnClientDisconnected();
+    Q_INVOKABLE void OnNewConnection();
+    Q_INVOKABLE void OnTextMessageReceived(const QString &message);
+    Q_INVOKABLE void OnClientDisconnected();
 };

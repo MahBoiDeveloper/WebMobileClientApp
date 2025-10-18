@@ -18,18 +18,25 @@ WebSocketServer::~WebSocketServer() { CloseServer(); }
 
 void WebSocketServer::HostServer()
 {
+    if (hosted)
+        return;
+
     wss = new QWebSocketServer("WebSocket Server", QWebSocketServer::NonSecureMode, this);
 
     if (wss->listen(QHostAddress::Any, port))
     {
+        hosted = true;
         qDebug() << "[SERVER] Сервер запущен на адресе " << "locahost:" << port;
         connect(wss, &QWebSocketServer::newConnection, this, &WebSocketServer::OnNewConnection);
     }
     else
     {
+        hosted = false;
         qDebug() << "[SERVER] Сервер не стартанул на адресе " << "locahost:" << port;
     }
 }
+
+bool WebSocketServer::IsHosted() { return hosted; }
 
 void WebSocketServer::CloseServer()
 {

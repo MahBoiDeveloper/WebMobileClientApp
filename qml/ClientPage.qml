@@ -162,88 +162,82 @@ ApplicationWindow
             }
         }
 
-        Column
+        TextField
         {
-            x: rwBody.x
-            y: rwBody.y + 450
-            spacing: cLayout.spacing
+            id: inpURI
+            width: 500
+            text: "ws://expserver.site:40000"
+        }
 
-            TextField
+        Row
+        {
+            spacing: cLayout.spacing
+            Button
             {
-                id: inpURI
-                width: 500
-                text: "ws://expserver.site:40000"
+                id: btnConnect
+                width: btnServer.width
+                height: btnServer.height
+                color: btnServer.color;
+                backgroundColor: btnServer.backgroundColor
+                text: "Connect"
+
+                onClicked: {
+                    // Initilze connection
+                    wsc.Connect(inpURI.text)
+                    wsc.SendRequest()
+                    lblHeader.text = wsc.GetStatus()
+
+                    // Update data on the screen
+                    txtPageViewsValue.text = wsc.PageViews()
+                    txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
+                    txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
+
+                    // Change style and text if connected
+                    text = wsc.IsConnected ? "Connected" : "Connect"
+                    backgroundColor = wsc.IsConnected ? '#ab23ab' : btnServer.backgroundColor
+
+                    // Hide host button
+                    btnHost.visible = false
+                }
             }
 
-            Row
+            Button
             {
-                spacing: cLayout.spacing
-                Button
-                {
-                    id: btnConnect
-                    width: btnServer.width
-                    height: btnServer.height
-                    color: btnServer.color;
-                    backgroundColor: btnServer.backgroundColor
-                    text: "Connect"
+                id: btnGet
+                width: btnServer.width
+                height: btnServer.height
+                color: btnServer.color;
+                backgroundColor: btnServer.backgroundColor
+                text: "Get Data"
 
-                    onClicked: {
-                        // Initilze connection
-                        wsc.Connect(inpURI.text)
-                        wsc.SendRequest()
-                        lblHeader.text = wsc.GetStatus()
-
-                        // Update data on the screen
-                        txtPageViewsValue.text = wsc.PageViews()
-                        txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
-                        txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
-
-                        // Change style and text if connected
-                        text = wsc.IsConnected ? "Connected" : "Connect"
-                        backgroundColor = wsc.IsConnected ? '#ab23ab' : btnServer.backgroundColor
-
-                        // Hide host button
-                        btnHost.visible = false
-                    }
+                onClicked: {
+                    wsc.SendRequest()
+                    txtPageViewsValue.text = wsc.PageViews()
+                    txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
+                    txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
                 }
+            }
 
-                Button
-                {
-                    id: btnGet
-                    width: btnServer.width
-                    height: btnServer.height
-                    color: btnServer.color;
-                    backgroundColor: btnServer.backgroundColor
-                    text: "Get Data"
+            Button
+            {
+                id: btnHost
+                width: btnServer.width
+                height: btnServer.height
+                color: btnServer.color;
+                backgroundColor: btnServer.backgroundColor
+                text: "Host"
 
-                    onClicked: {
-                        wsc.SendRequest()
-                        txtPageViewsValue.text = wsc.PageViews()
-                        txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
-                        txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
-                    }
-                }
+                onClicked: {
+                    // Starting the websocket server
+                    wss.HostServer()
 
-                Button
-                {
-                    id: btnHost
-                    width: btnServer.width
-                    height: btnServer.height
-                    color: btnServer.color;
-                    backgroundColor: btnServer.backgroundColor
-                    text: "Host"
+                    // Change style and text if hosted
+                    text = true ? "Hosted" : "Host"
+                    backgroundColor = true ? '#ab23ab' : btnServer.backgroundColor
 
-                    onClicked: {
-                        // Starting the websocket server
-                        wss.StartServer()
-
-                        // Change style and text if hosted
-                        text = true ? "Hosted" : "Host"
-                        backgroundColor = true ? '#ab23ab' : btnServer.backgroundColor
-
-                        // Hide connect button
-                        btnConnect.visible = false
-                    }
+                    // Hide client buttons
+                    btnConnect.visible = false
+                    btnGet.visible = false
                 }
             }
         }
