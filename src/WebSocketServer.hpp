@@ -13,15 +13,19 @@ private:
     QList<QWebSocket*> clients;
     uint16_t port = 40000;
     bool hosted = false;
+    QString fullAddress = "localhost:40000";
+    QString status = "Offline";
 
 public:
-    explicit WebSocketServer(QObject *parent = nullptr);
+    explicit WebSocketServer(QObject* parent = nullptr);
     ~WebSocketServer();
 
     Q_INVOKABLE void HostServer();
     Q_INVOKABLE void CloseServer();
 
     Q_INVOKABLE bool IsHosted();
+    Q_INVOKABLE QString GetHostedAddress();
+    Q_INVOKABLE QString GetStatus();
 
 signals:
     Q_INVOKABLE void newMessageReceived(const QString &message);

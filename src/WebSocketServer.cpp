@@ -26,17 +26,20 @@ void WebSocketServer::HostServer()
     if (wss->listen(QHostAddress::Any, port))
     {
         hosted = true;
-        qDebug() << "[SERVER] Сервер запущен на адресе " << "locahost:" << port;
+        status = QString("Listening ") + fullAddress;
+        qDebug() << "[SERVER] Сервер запущен на адресе " << fullAddress;
         connect(wss, &QWebSocketServer::newConnection, this, &WebSocketServer::OnNewConnection);
     }
     else
     {
         hosted = false;
-        qDebug() << "[SERVER] Сервер не стартанул на адресе " << "locahost:" << port;
+        qDebug() << "[SERVER] Сервер не стартанул на адресе " << fullAddress;
     }
 }
 
-bool WebSocketServer::IsHosted() { return hosted; }
+bool WebSocketServer::IsHosted()            { return hosted; }
+QString WebSocketServer::GetHostedAddress() { return fullAddress; }
+QString WebSocketServer::GetStatus()        { return status; }
 
 void WebSocketServer::CloseServer()
 {

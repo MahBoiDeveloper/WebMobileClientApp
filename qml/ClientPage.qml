@@ -238,6 +238,7 @@ ApplicationWindow
                     // Hide client buttons
                     btnConnect.visible = false
                     btnGet.visible = false
+                    lblHeader.text = wss.GetStatus()
                 }
             }
         }
