@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
     QScopedPointer<QQuickView> view(Aurora::Application::createView());
 
     qmlRegisterType<WebSocketClient>("WebSocketClient", 1, 0, "WebSocketClient");
+    qmlRegisterType<WebSocketServer>("WebSocketServer", 1, 0, "WebSocketServer");
 
     view->setSource(Aurora::Application::pathTo(QStringLiteral("qml/ClientPage.qml")));
     view->show();

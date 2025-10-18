@@ -1,6 +1,7 @@
 import QtQuick 2.6
 import Sailfish.Silica 1.0
 import WebSocketClient 1.0
+import WebSocketServer 1.0
 
 // If you get M306 -- add Q_INVOKABLE
 // https://stackoverflow.com/questions/31630078/c-class-exposed-to-qml-error-in-fashion-typeerror-property-of-object-is
@@ -13,10 +14,8 @@ ApplicationWindow
     allowedOrientations: defaultAllowedOrientations
 
     // https://metanit.com/cpp/qt/5.2.php
-    WebSocketClient
-    {
-        id: wsc
-    }
+    WebSocketClient { id: wsc }
+    WebSocketServer { id: wss }
 
     Column
     {
