@@ -18,192 +18,195 @@ ApplicationWindow
         id: wsc
     }
 
-    Label
+    Column
     {
-        id: lblHeader
+        id: cLayout
+        spacing: 10
         x: 60
         y: 150
-        text: wsc.GetStatus()
-    }
-
-    Row
-    {
-        id: rwBody
-        x: lblHeader.x
-        y: lblHeader.y + 150
-        spacing: 10
-
-        Column
+        Label
         {
-            spacing: 10
-            Rectangle
+            id: lblHeader
+            text: wsc.GetStatus()
+        }
+
+        Row
+        {
+            id: rwBody
+            spacing: cLayout.spacing
+
+            Column
             {
-                id: rLeftRect
-                radius: 10
-                height: 80
-                width: 450
-                color: '#e3ff43'
-                Text
+                spacing: cLayout.spacing
+                Rectangle
                 {
-                    id: txtMain
-                    anchors.fill: parent
-                    anchors.leftMargin: 10
-                    horizontalAlignment: Text.AlignLeft
-                    verticalAlignment: Text.AlignVCenter
-                    font.family: "Consolas"
-                    text: "Page Views:"
+                    id: rLeftRect
+                    radius: 10
+                    height: 80
+                    width: 450
+                    color: '#e3ff43'
+                    Text
+                    {
+                        id: txtMain
+                        anchors.fill: parent
+                        anchors.leftMargin: 10
+                        horizontalAlignment: Text.AlignLeft
+                        verticalAlignment: Text.AlignVCenter
+                        font.family: "Consolas"
+                        text: "Page Views:"
+                    }
+                }
+                Rectangle
+                {
+                    opacity: rLeftRect.opacity
+                    radius: rLeftRect.radius
+                    color: rLeftRect.color
+                    height: rLeftRect.height
+                    width: rLeftRect.width
+                    Text
+                    {
+                        anchors.fill: parent
+                        anchors.leftMargin: 10
+                        horizontalAlignment: Text.AlignLeft
+                        verticalAlignment: Text.AlignVCenter
+                        font.family: txtMain.font.family
+                        text: "Unique Visitors:"
+                    }
+                }
+                Rectangle
+                {
+                    opacity: rLeftRect.opacity
+                    radius: rLeftRect.radius
+                    color: rLeftRect.color
+                    height: rLeftRect.height
+                    width: rLeftRect.width
+                    Text
+                    {
+                        anchors.fill: parent
+                        anchors.leftMargin: 10
+                        horizontalAlignment: Text.AlignLeft
+                        verticalAlignment: Text.AlignVCenter
+                        font.family: txtMain.font.family
+                        text: "Avg. Session Duration:"
+                    }
                 }
             }
-            Rectangle
+
+            Column
             {
-                opacity: rLeftRect.opacity
-                radius: rLeftRect.radius
-                color: rLeftRect.color
-                height: rLeftRect.height
-                width: rLeftRect.width
-                Text
+                spacing: cLayout.spacing
+                Rectangle
                 {
-                    anchors.fill: parent
-                    anchors.leftMargin: 10
-                    horizontalAlignment: Text.AlignLeft
-                    verticalAlignment: Text.AlignVCenter
-                    font.family: txtMain.font.family
-                    text: "Unique Visitors:"
+                    id: rRightRect
+                    opacity: rLeftRect.opacity
+                    radius: rLeftRect.radius
+                    color: rLeftRect.color
+                    height: 80
+                    width: 100
+                    Text
+                    {
+                        id: txtPageViewsValue
+                        opacity: txtMain.opacity
+                        anchors.centerIn: parent
+                        font.family: txtMain.font.family
+                        text: "N/A"
+                    }
                 }
-            }
-            Rectangle
-            {
-                opacity: rLeftRect.opacity
-                radius: rLeftRect.radius
-                color: rLeftRect.color
-                height: rLeftRect.height
-                width: rLeftRect.width
-                Text
+                Rectangle
                 {
-                    anchors.fill: parent
-                    anchors.leftMargin: 10
-                    horizontalAlignment: Text.AlignLeft
-                    verticalAlignment: Text.AlignVCenter
-                    font.family: txtMain.font.family
-                    text: "Avg. Session Duration:"
+                    opacity: rRightRect.opacity
+                    radius: rRightRect.radius
+                    color: rRightRect.color
+                    height: rRightRect.height
+                    width: rRightRect.width
+                    Text
+                    {
+                        id: txtUniqueVisitorsValue
+                        opacity: txtMain.opacity
+                        anchors.centerIn: parent
+                        font.family: txtMain.font.family
+                        text: "N/A"
+                    }
+                }
+                Rectangle
+                {
+                    opacity: rRightRect.opacity
+                    radius: rRightRect.radius
+                    color: rRightRect.color
+                    height: rRightRect.height
+                    width: rRightRect.width
+                    Text
+                    {
+                        id: txtAvgSessionDurationValue
+                        opacity: txtMain.opacity
+                        anchors.centerIn: parent
+                        font.family: txtMain.font.family
+                        text: "N/A"
+                        onTextChanged: {
+                            text = wsc.AvgSessionDurationValue
+                        }
+                    }
                 }
             }
         }
 
         Column
         {
-            spacing: 10
-            Rectangle
+            x: rwBody.x
+            y: rwBody.y + 450
+            spacing: cLayout.spacing
+
+            TextField
             {
-                id: rRightRect
-                opacity: rLeftRect.opacity
-                radius: rLeftRect.radius
-                color: rLeftRect.color
-                height: 80
-                width: 100
-                Text
-                {
-                    id: txtPageViewsValue
-                    opacity: txtMain.opacity
-                    anchors.centerIn: parent
-                    font.family: txtMain.font.family
-                    text: "N/A"
-                }
+                id: inpURI
+                width: 500
+                text: "ws://expserver.site:40000"
             }
-            Rectangle
+
+            Row
             {
-                opacity: rRightRect.opacity
-                radius: rRightRect.radius
-                color: rRightRect.color
-                height: rRightRect.height
-                width: rRightRect.width
-                Text
+                spacing: cLayout.spacing
+                Button
                 {
-                    id: txtUniqueVisitorsValue
-                    opacity: txtMain.opacity
-                    anchors.centerIn: parent
-                    font.family: txtMain.font.family
-                    text: "N/A"
+                    id: btnConnect
+                    width: 200
+                    height: 30
+                    color: '#ffffff';
+                    text: "Connect"
+                    backgroundColor: '#441c7f'
+
+                    onClicked: {
+                        wsc.Connect(inpURI.text)
+                        wsc.SendRequest()
+                        lblHeader.text = wsc.GetStatus()
+
+                        txtPageViewsValue.text = wsc.PageViews()
+                        txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
+                        txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
+
+                        text = "Connected"
+                        color = '#000000'
+                        backgroundColor = '#ab23ab'
+                    }
                 }
-            }
-            Rectangle
-            {
-                opacity: rRightRect.opacity
-                radius: rRightRect.radius
-                color: rRightRect.color
-                height: rRightRect.height
-                width: rRightRect.width
-                Text
+
+                Button
                 {
-                    id: txtAvgSessionDurationValue
-                    opacity: txtMain.opacity
-                    anchors.centerIn: parent
-                    font.family: txtMain.font.family
-                    text: "N/A"
-                    onTextChanged: {
-                        text = wsc.AvgSessionDurationValue
+                    id: btnGet
+                    width: btnConnect.width
+                    height: btnConnect.height
+                    color: btnConnect.color;
+                    backgroundColor: btnConnect.backgroundColor
+                    text: "Get Data"
+
+                    onClicked: {
+                        wsc.SendRequest()
+                        txtPageViewsValue.text = wsc.PageViews()
+                        txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
+                        txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
                     }
                 }
             }
         }
     }
-
-    Column
-    {
-        x: rwBody.x
-        y: rwBody.y + 450
-        spacing: rwBody.spacing
-
-        TextField
-        {
-            id: inpURI
-            width: 500
-            text: "ws://expserver.site:40000"
-        }
-
-        Row
-        {
-            spacing: rwBody.spacing
-            Button
-            {
-                id: btnConnect
-                width: 200
-                height: 30
-                color: '#ffffff';
-                text: "Connect"
-                backgroundColor: '#441c7f'
-
-                onClicked: {
-                    wsc.Connect(inpURI.text)
-                    wsc.SendRequest()
-                    lblHeader.text = wsc.GetStatus()
-
-                    txtPageViewsValue.text = wsc.PageViews()
-                    txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
-                    txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
-
-                    text = "Connected"
-                    color = '#000000'
-                    backgroundColor = '#ab23ab'
-                }
-            }
-
-            Button
-            {
-                id: btnGet
-                width: 200
-                height: 30
-                color: '#ffffff';
-                text: "Get Data"
-
-                onClicked: {
-                    wsc.SendRequest()
-                    txtPageViewsValue.text = wsc.PageViews()
-                    txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
-                    txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
-                }
-                backgroundColor: '#441c7f'
-            }
-        }
-    }
-}
+}   
