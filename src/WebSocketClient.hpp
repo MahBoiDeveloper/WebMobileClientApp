@@ -6,8 +6,8 @@
 
 class WebSocketClient : public QObject
 {
-private:
     Q_OBJECT
+private:
     QWebSocket ws;
     QString uri = "";
     QString status = "Disconnected";

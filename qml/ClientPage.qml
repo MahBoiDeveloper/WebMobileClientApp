@@ -234,11 +234,14 @@ ApplicationWindow
                     text: "Host"
 
                     onClicked: {
+                        // Starting the websocket server
+                        wss.StartServer()
+
                         // Change style and text if hosted
-                        text = true ? "Hosted" : "host"
+                        text = true ? "Hosted" : "Host"
                         backgroundColor = true ? '#ab23ab' : btnServer.backgroundColor
 
-                        // Hide host button
+                        // Hide connect button
                         btnConnect.visible = false
                     }
                 }

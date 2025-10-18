@@ -7,12 +7,13 @@
 
 class WebSocketServer : public QObject
 {
-private:
     Q_OBJECT
+private:
     QWebSocketServer *wss;
     QList<QWebSocket*> clients;
+    uint16_t port = 40000;
 
-    public:
+public:
     explicit WebSocketServer(QObject *parent = nullptr);
     ~WebSocketServer();
 
@@ -25,7 +26,7 @@ signals:
     void clientDisconnected();
 
 private slots:
-    void onNewConnection();
-    void onTextMessageReceived(const QString &message);
-    void onClientDisconnected();
+    void OnNewConnection();
+    void OnTextMessageReceived(const QString &message);
+    void OnClientDisconnected();
 };

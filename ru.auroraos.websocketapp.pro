@@ -1,7 +1,7 @@
 TARGET = ru.auroraos.websocketapp
 
 CONFIG += \
-    c++17 \
+    c++20 \
     auroraapp \
 
 QT += core gui qml quick network dbus svg websockets

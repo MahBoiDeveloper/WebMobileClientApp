@@ -15,17 +15,17 @@ void WebSocketClient::Connect(const QUrl& url)
     if (connected)
         return;
 
-    qDebug() << "Подключение к серверу WebSocket:" << url.toString() << "...";
+    qDebug() << "[CLIENT] Подключение к серверу WebSocket:" << url.toString() << "...";
     ws.open(url);
 
-    qDebug() << "Соединение установлено";
+    qDebug() << "[CLIENT] Соединение установлено";
     connected = true;
     status = QString("Connected to ") + url.toString();
 }
 
 void WebSocketClient::OnText(const QString& message)
 {
-    qDebug() << "Поступило сообщение:" << message;
+    qDebug() << "[CLIENT] Поступило сообщение:" << message;
 
     if (message.at(0) == '{')
     {
@@ -47,7 +47,7 @@ void WebSocketClient::OnText(const QString& message)
 
 void WebSocketClient::OnClose()
 {
-    qDebug() << "Соединение закрыто";
+    qDebug() << "[CLIENT] Соединение закрыто";
     status = ws.errorString();
 }
 
