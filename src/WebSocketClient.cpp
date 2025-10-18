@@ -12,6 +12,9 @@ WebSocketClient::WebSocketClient(QObject* parent) : QObject(parent)
 
 void WebSocketClient::Connect(const QUrl& url)
 {
+    if (connected)
+        return;
+
     qDebug() << "Подключение к серверу WebSocket:" << url.toString() << "...";
     ws.open(url);
 
