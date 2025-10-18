@@ -19,6 +19,7 @@ HEADERS += \
 
 DISTFILES += \
     qml/ClientPage.qml \
+    qml/ServerPage.qml \
     rpm/ru.auroraos.websocketapp.spec \
     qml/cover/DefaultCoverPage.qml \
     qml/pages/AboutPage.qml \

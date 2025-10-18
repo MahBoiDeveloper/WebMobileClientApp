@@ -24,9 +24,22 @@ ApplicationWindow
         spacing: 10
         x: 60
         y: 150
+
+        Button
+        {
+            id: btnServer
+            visible: false
+            width: 200
+            height: 30
+            color: '#ffffff';
+            backgroundColor: '#441c7f'
+            text: "Server Mode"
+        }
+
         Label
         {
             id: lblHeader
+            y: btnServer.y + btnServer.height + cLayout.spacing + 30
             text: wsc.GetStatus()
         }
 
@@ -169,34 +182,36 @@ ApplicationWindow
                 Button
                 {
                     id: btnConnect
-                    width: 200
-                    height: 30
-                    color: '#ffffff';
+                    width: btnServer.width
+                    height: btnServer.height
+                    color: btnServer.color;
+                    backgroundColor: btnServer.backgroundColor
                     text: "Connect"
-                    backgroundColor: '#441c7f'
 
                     onClicked: {
+                        // Initilze connection
                         wsc.Connect(inpURI.text)
                         wsc.SendRequest()
                         lblHeader.text = wsc.GetStatus()
 
+                        // Update data on the screen
                         txtPageViewsValue.text = wsc.PageViews()
                         txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
                         txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
 
-                        text = "Connected"
-                        color = '#000000'
-                        backgroundColor = '#ab23ab'
+                        // Change style and text if connected
+                        text = wsc.IsConnected ? "Connected" : "Connect"
+                        backgroundColor = wsc.IsConnected ? '#ab23ab' : btnServer.backgroundColor
                     }
                 }
 
                 Button
                 {
                     id: btnGet
-                    width: btnConnect.width
-                    height: btnConnect.height
-                    color: btnConnect.color;
-                    backgroundColor: btnConnect.backgroundColor
+                    width: btnServer.width
+                    height: btnServer.height
+                    color: btnServer.color;
+                    backgroundColor: btnServer.backgroundColor
                     text: "Get Data"
 
                     onClicked: {
