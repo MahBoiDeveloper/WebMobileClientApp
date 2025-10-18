@@ -49,7 +49,7 @@ void WebSocketClient::OnClose()
     status = ws.errorString();
 }
 
-void WebSocketClient::OnOpen()      { ws.sendTextMessage("Hello chat!"); }
+void WebSocketClient::OnOpen()      { SendRequest(); }
 void WebSocketClient::SendRequest() { ws.sendTextMessage("get"); }
 
 bool WebSocketClient::IsConnected()           { return connected; }
