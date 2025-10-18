@@ -202,6 +202,9 @@ ApplicationWindow
                         // Change style and text if connected
                         text = wsc.IsConnected ? "Connected" : "Connect"
                         backgroundColor = wsc.IsConnected ? '#ab23ab' : btnServer.backgroundColor
+
+                        // Hide host button
+                        btnHost.visible = false
                     }
                 }
 
@@ -219,6 +222,25 @@ ApplicationWindow
                         txtPageViewsValue.text = wsc.PageViews()
                         txtUniqueVisitorsValue.text = wsc.UniqueVisitors()
                         txtAvgSessionDurationValue.text = wsc.AvgSessionDuration()
+                    }
+                }
+
+                Button
+                {
+                    id: btnHost
+                    width: btnServer.width
+                    height: btnServer.height
+                    color: btnServer.color;
+                    backgroundColor: btnServer.backgroundColor
+                    text: "Host"
+
+                    onClicked: {
+                        // Change style and text if hosted
+                        text = true ? "Hosted" : "host"
+                        backgroundColor = true ? '#ab23ab' : btnServer.backgroundColor
+
+                        // Hide host button
+                        btnConnect.visible = false
                     }
                 }
             }
