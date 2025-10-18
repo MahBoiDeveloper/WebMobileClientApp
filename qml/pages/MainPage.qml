@@ -7,7 +7,7 @@ Page {
 
     PageHeader {
         objectName: "pageHeader"
-        title: qsTr("v1.0")
+        title: "v0.3"
         extraContent.children: [
             // IconButton {
             //     objectName: "aboutButton"
